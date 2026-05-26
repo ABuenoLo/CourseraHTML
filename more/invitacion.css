@@ -118,8 +118,16 @@ h2 {
     font-size: 0.9rem; /* ✨ Added this to make the text smaller */
 }
 
+/* Tamaño por defecto (Móviles primero) */
 .Icono {
-    /* Mínimo 60px, escala fluidamente en el medio, Máximo 120px */
-    width: clamp(60px, 10vw, 120px);
-    height: clamp(60px, 10vw, 120px);
+    width: 60px; 
+    height: 60px;
+}
+
+/* Tamaño para pantallas más grandes (Tablets y Ordenadores) */
+@media (min-width: 768px) {
+    .Icono {
+        width: 120px;
+        height: 120px;
+    }
 }
