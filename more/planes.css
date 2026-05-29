@@ -1,0 +1,144 @@
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* El mismo fondo azul de la página anterior */
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.container {
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+}
+
+h1 {
+    color: #2563eb;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+h3{
+    font-size: smaller;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Envoltura de las tarjetas */
+.cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Estilo de cada tarjeta */
+.plan-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card2 {
+    background-color: white;
+    /* padding: 30px; */
+    border-radius: 20px;
+    height: 50px;
+    width: 600px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo general de las imágenes */
+.plan-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.plan-card h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+.plan-card p {
+    color: #666;
+    margin-bottom: 25px;
+    flex-grow: 1;
+    line-height: 1.6;
+}
+
+/* Botones de selección */
+.btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #3b82f6;
+    color: white;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+}
+
+
+/* ✨ LOS EFECTOS DIVERTIDOS EN LAS IMÁGENES ✨ */
+
+/* 1. Efecto Bolos: Gira como una bola de bolos y rueda un poco */
+.plan-card:hover .img-bolos {
+    transform: rotate(360deg) translateX(15px);
+    border-radius: 50%; /* Se vuelve redonda para rodar */
+}
+
+/* 2. Efecto Atardecer: Se hunde (el sol bajando) y se vuelve cálido/naranja */
+.plan-card:hover .img-atardecer {
+    transform: translateY(20px) scale(0.95);
+    filter: sepia(0.8) hue-rotate(-20deg) saturate(2);
+    opacity: 0.8;
+}
+
+/* 3. Efecto Playa: Animación de "olas" para que balancee */
+@keyframes olas {
+    0% { transform: rotate(0deg) translateY(0px); }
+    25% { transform: rotate(-5deg) translateY(-8px); }
+    50% { transform: rotate(5deg) translateY(4px); }
+    75% { transform: rotate(-3deg) translateY(-4px); }
+    100% { transform: rotate(0deg) translateY(0px); }
+}
+
+.plan-card:hover .img-playa {
+    animation: olas 2s infinite ease-in-out;
+}
